@@ -14,7 +14,8 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-get_ipython().run_line_magic('matplotlib', 'inline')
+
+# get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[ ]:

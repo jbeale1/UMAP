@@ -26,7 +26,7 @@ sns.set(style='white', context='notebook', rc={'figure.figsize':(14,10)})
 # In[ ]:
 
 
-cars = pd.read_csv("/home/john/UMAP/cars-7390.csv")  # read in CSV data
+cars = pd.read_csv("cars-7390.csv")  # read in CSV data
 cars.head()
 
 
@@ -40,7 +40,7 @@ cars.hour.value_counts()  # display how many events at each hour of day
 # In[ ]:
 
 
-sns.pairplot(cars.drop("second", axis=1), hue='hour');
+sns.pairplot(cars, vars=["v2", "std", "minY", "pixels"], hue='v2');  # slow
 
 
 # In[ ]:
@@ -73,19 +73,19 @@ scaled_cars_data = StandardScaler().fit_transform(cars_data)
 # In[ ]:
 
 
-embedding = reducer.fit_transform(scaled_cars_data) # this is a little slow
-embedding.shape
+# embedding = reducer.fit_transform(scaled_cars_data) # this is a little slow
+# embedding.shape
 
 
 # In[ ]:
 
 
-plt.scatter(
-    embedding[:, 0],
-    embedding[:, 1]
-    )
-plt.gca().set_aspect('equal', 'datalim')
-plt.title('UMAP projection of Oct.9-17 2022 Car Speed (v1-3)', fontsize=24);
+# plt.scatter(
+#    embedding[:, 0],
+#    embedding[:, 1]
+#    )
+# plt.gca().set_aspect('equal', 'datalim')
+# plt.title('UMAP projection of Oct.9-17 2022 Car Speed (v1-3)', fontsize=24);
 
 
 # In[ ]:
@@ -102,13 +102,13 @@ mapper = umap.UMAP(n_neighbors=15,
 
 # this cell is a little slow
 
-#umap.plot.diagnostic(mapper, diagnostic_type='vq')
-#umap.plot.diagnostic(mapper, diagnostic_type='pca')
-umap.plot.diagnostic(mapper, diagnostic_type='local_dim')
-#umap.plot.diagnostic(mapper, diagnostic_type='neighborhood')
+# umap.plot.diagnostic(mapper, diagnostic_type='vq')
+# umap.plot.diagnostic(mapper, diagnostic_type='pca')
+# umap.plot.diagnostic(mapper, diagnostic_type='local_dim')
+# umap.plot.diagnostic(mapper, diagnostic_type='neighborhood')
 
 
-# In[105]:
+# In[ ]:
 
 
 def ishow(dmap, labels, n):

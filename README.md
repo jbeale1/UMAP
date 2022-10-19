@@ -1,9 +1,9 @@
 # UMAP
-## Finding patterns in data sets, without knowing anything.
+## Finding patterns in data without knowing anything.
 
 UMAP is described in this [readthedocs](https://umap-learn.readthedocs.io/en/latest/parameters.html) page.
 
-A sample data set "cars-7390.csv" describes the velocity and size of traffic detected passing by on the road.
+A sample data set "cars-7390.csv" records the velocity and size of traffic detected passing by on the road.
 UMAP finds clusters in this data, without any training. This code is in straight python
 [here](https://github.com/jbeale1/UMAP/blob/main/umap-example1.py), and as a jupyter notebook [here](https://github.com/jbeale1/UMAP/blob/main/umap-example1.ipynb).
 

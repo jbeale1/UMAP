@@ -17,6 +17,9 @@ This output map is colored by the average velocity of the detected object. Slowe
 This output map is colored by the size of the detected object. Larger traffic (eg. school bus, garbage truck) are towards the top, and smaller (bicycle, person) are towards the bottom.
 ![UMAP plot colored by size](https://github.com/jbeale1/UMAP/blob/main/pics/car-data-Oct17-ColorSize-annotated.png?raw=true)
 
-Pair Plot of the more significant variables against each other.
+Animation comparing the training data mapping, and later-acquired test data that fits well into the existing clusters.
+![comparision of train and test mappings](https://github.com/jbeale1/UMAP/blob/main/pics/CompareTrainTest.gif?raw=true)
+
+Pair Plot of the more significant variables against each other (using training data).
 ![pair plot](https://github.com/jbeale1/UMAP/blob/main/pics/cars-pair-plot.png?raw=true)
 

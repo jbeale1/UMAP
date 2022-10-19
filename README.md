@@ -12,8 +12,11 @@ UMAP finds clusters in this data, without any training, supervision, labelling o
 Upon inspection, the clusters UMAP finds turn out to correspond to specific kinds of traffic. As far as I can tell, _all_ the large variety of structure visible in the output map is showing real features of the data, although some parts of it are easier to interpret than others.
 
 This output map is colored by the average velocity of the detected object. Slower traffic is near the middle, faster towards the edges. Traffic moving to the right is toward the right-hand side of the graph.
-![UMAP plot colored by speed](https://github.com/jbeale1/UMAP/blob/main/car-data-Oct17-ColorV2-annotated.png?raw=true)
+![UMAP plot colored by speed](https://github.com/jbeale1/UMAP/blob/main/pics/car-data-Oct17-ColorV2-annotated.png?raw=true)
 
 This output map is colored by the size of the detected object. Larger traffic (eg. school bus, garbage truck) are towards the top, and smaller (bicycle, person) are towards the bottom.
-![UMAP plot colored by size](https://github.com/jbeale1/UMAP/blob/main/car-data-Oct17-ColorSize-annotated.png?raw=true)
+![UMAP plot colored by size](https://github.com/jbeale1/UMAP/blob/main/pics/car-data-Oct17-ColorSize-annotated.png?raw=true)
+
+Pair Plot of the more significant variables against each other.
+![pair plot](https://github.com/jbeale1/UMAP/blob/main/pics/cars-pair-plot.png?raw=true)
 

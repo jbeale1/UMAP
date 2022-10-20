@@ -1,5 +1,5 @@
 # UMAP
-## Finding patterns in data, while knowing nothing.
+## Finding patterns with no prior knowledge
 
 UMAP is described in this [readthedocs](https://umap-learn.readthedocs.io/en/latest/parameters.html) page.
 
@@ -11,7 +11,7 @@ UMAP finds clusters in this data, without any training, supervision, labelling o
 
 Upon inspection, the clusters UMAP finds turn out to correspond to specific kinds of traffic. As far as I can tell, _all_ the large variety of structure visible in the output map is showing real features of the data, although some parts of it are easier to interpret than others.
 
-As a concrete example, the mail truck comes by once a day, more or less. The regular mailman gets mapped to the same spot each time, because he drives the same way. When we had a new driver who drove differently, her data showed up in a very different place on the map (third line of data below). This wasn't due to the date and time; I tried changing that and it didn't affect the output.
+As a concrete example, the mail truck comes by once a day, more or less. The regular mailman gets mapped to the same spot each time, because he consistently drives the same way. When we had a new driver who drove differently, her data showed up in a very different place on the map (third line of data below). This wasn't due to the date and time; I tried changing that and it didn't affect the output. The majority of traffic does not slow down near the mailbox, so all those points get mapped elsewhere.
 ```
 day,hour,minute,second,frames,v1,v2,v3,std,minY,size => [ output mapping ]
 14,14,42,58.500,59,2.73,2.32,1.90,2.53,072,5425  => [5.1577015, 1.5967405]  old mailman

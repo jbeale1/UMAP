@@ -14,7 +14,6 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-
 # get_ipython().run_line_magic('matplotlib', 'inline')
 
 
@@ -90,9 +89,9 @@ mapper = umap.UMAP(n_neighbors=15,
 
 def ishow(dmap, labels, n):
     hover_data = pd.DataFrame({'index': np.arange(n)+2,
-                               'label': labels
-                               #'x': dmap.embedding_[:n, 0],
-                               #'y': dmap.embedding_[:n, 1]
+                               'label': labels,
+                               'x': dmap.embedding_[:n, 0],
+                               'y': dmap.embedding_[:n, 1]
                                })
     p = umap.plot.interactive(dmap, labels=labels,
                               hover_data=hover_data, point_size=3, theme = 'fire')
@@ -114,6 +113,7 @@ ishow(mapper, labels, img_count)  # show an interactive plot of the training dat
 
 
 orig_embedding = mapper.transform(scaled_cars_data)   # original training data in map
+plt.rcParams['axes.facecolor'] = 'black'  # set matplotlib background color
 plt.scatter(orig_embedding[:, 0], orig_embedding[:, 1], c=carA[:,6], s=2, cmap='Spectral') # plot training data
 
 
@@ -126,7 +126,8 @@ plt.scatter(orig_embedding[:, 0], orig_embedding[:, 1], c=carA[:,6], s=2, cmap='
 # In[ ]:
 
 
-cars2 = pd.read_csv("cars-1525.csv")  # Get test data from CSV file
+#cars2 = pd.read_csv("mailman.csv")  # Get test data from CSV file
+cars2 = pd.read_csv("cars-2310.csv")  # Get test data from CSV file
 
 
 # In[ ]:
@@ -171,6 +172,22 @@ plt.rcParams['axes.facecolor'] = 'black'  # set matplotlib background color
 #plt.scatter(test_embedding[:, 0], test_embedding[:, 1], c=car2A[:,9], cmap='Spectral')
 #plt.scatter(test_embedding[:, 0], test_embedding[:, 1], c=car2A[:,8], cmap='Spectral')
 plt.scatter(test_embedding[:, 0], test_embedding[:, 1], c=car2A[:,6], s=2, cmap='Spectral')
+
+
+# In[40]:
+
+
+# Find the closest example to a specific point in data mapping
+from scipy import spatial
+
+def showNearest(A,pt):
+    dist,index = spatial.KDTree(A).query(pt)  # get distance and index of nearest point
+    print("Map coords: ", A[index],end="")  # find (x,y) of nearest point
+    print(" CSV Line %d" % (index+2)) # corresponding line # in CSV file
+
+pt = [4.94, 0.724]  # choose a point in the output space
+showNearest(orig_embedding, pt)  # nearest point in training data
+showNearest(test_embedding, pt)  # nearest point in test data
 
 
 # In[ ]:

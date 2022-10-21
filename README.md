@@ -25,8 +25,9 @@ This output map is colored by the average velocity of the detected object. Slowe
 This output map is colored by the size of the detected object. Larger traffic (eg. school bus, garbage truck) are towards the top, and smaller (bicycle, person) are towards the bottom.
 ![UMAP plot colored by size](https://github.com/jbeale1/UMAP/blob/main/pics/car-data-Oct17-ColorSize-annotated.png?raw=true)
 
-Animation comparing the training data mapping, and later-acquired test data that fits well into the existing clusters.
-![comparision of train and test mappings](https://github.com/jbeale1/UMAP/blob/main/pics/CompareTrainTest.gif?raw=true)
+Reality check: this animation cycles between 15,000 records of real data from 2021, with 15k records of random data in which each column separately has the same mean and standard-deviation as the corresponding measured data column, and is plotted with the same UMAP mapping. You can see UMAP puts even random data into the same general outline, but all the differences between these plots show the information that is some way a fingerprint of the real dataset.
+![real data and random](https://github.com/jbeale1/UMAP/blob/main/pics/Car-2021-random-compare.gif?raw=true)
+
 
 Pair Plot of the more significant variables against each other (using training data).
 ![pair plot](https://github.com/jbeale1/UMAP/blob/main/pics/cars-pair-plot.png?raw=true)

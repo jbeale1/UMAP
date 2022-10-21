@@ -28,7 +28,3 @@ This output map is colored by the size of the detected object. Larger traffic (e
 Reality check: this animation cycles between 15,000 records of real data from 2021, with 15k records of random data in which each column separately has the same mean and standard-deviation as the corresponding measured data column, and is plotted with the same UMAP mapping. You can see UMAP puts even random data into the same general outline, but all the differences between these plots show the information that is some way a fingerprint of the real dataset.
 ![real data and random](https://github.com/jbeale1/UMAP/blob/main/pics/Car-2021-random-compare.gif?raw=true)
 
-
-Pair Plot of the more significant variables against each other (using training data).
-![pair plot](https://github.com/jbeale1/UMAP/blob/main/pics/cars-pair-plot.png?raw=true)
-

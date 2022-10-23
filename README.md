@@ -32,8 +32,8 @@ After creating the map with some training data, I put a set of test data into th
 point in the original dataset to each point in the test data, and compared the differences between each variable
 in those two points as a function of the distribution over the full dataset.  As hoped, the new points on average, mapped
 to the original data set points more closely than half the distribution (0.5) away, in every case. Doing the same test with a random dataset (but having the correct mean and std.dev on each axis separately) showed in that case, the nearest mapped point was essentially uncorrelated (0.5). 
-`
+```
 frames,  v1,    v2,     v3,   stdev,  minY, size,   dir    
 [+0.243 +0.192 +0.146 +0.177 +0.217 +0.303 +0.269 +0.056]    real data
 [+0.517 +0.650 +0.647 +0.642 +0.527 +0.573 +0.519 +0.752]    randomized data
-`
+```
